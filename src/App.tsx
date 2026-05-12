@@ -254,9 +254,12 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight">
-                Junte-se à SmartWash e faça parte de um modelo de negócio comprovado!
-              </h2>
+              <img 
+                src="https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1778274085/Captura_de_tela_2026-03-07_172844_ci5dtc.png" 
+                alt="Junte-se à SmartWash" 
+                className="w-full max-w-lg mb-8 rounded-2xl shadow-lg"
+                referrerPolicy="no-referrer"
+              />
               <p className="text-lg text-deep-navy/70 mb-6 leading-relaxed">
                 Com uma loja matriz consolidada e duas franquias em funcionamento, a SmartWash oferece um modelo de negócio com alta taxa de sucesso. 
               </p>
