@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  
+  --color-deep-navy: #1C1F32;
+  --color-vibrant-blue: #254DE8;
+  --color-lavender: #846FFC;
+  --color-soft-ice: #F2F2F2;
+  --color-medium-gray: #E6E6E6;
+
+  --shadow-vibrant: 0 20px 25px -5px rgba(37, 77, 232, 0.2), 0 8px 10px -6px rgba(37, 77, 232, 0.2);
+}
+
+@layer base {
+  html, body {
+    font-family: var(--font-sans);
+    @apply text-deep-navy bg-soft-ice;
+  }
+}
+
+.glass {
+  @apply backdrop-blur-md bg-white/70 border border-white/20;
+}
+
+.section-rounded {
+  @apply rounded-[32px] md:rounded-[48px];
+}
+
+@keyframes shine {
+  0% { transform: translateX(-150%) skewX(-25deg); }
+  100% { transform: translateX(250%) skewX(-25deg); }
+}
+
+.shine-effect {
+  @apply relative overflow-hidden;
+}
+
+.shine-effect::after {
+  content: "";
+  @apply absolute top-0 left-0 w-[40%] h-full bg-linear-to-r from-transparent via-white/40 to-transparent;
+  animation: shine 4s infinite linear;
+}
+
+.shine-effect:hover::after {
+  animation-duration: 1.5s;
+}
+
+.reflection-effect {
+  @apply relative overflow-hidden;
+  mask-image: linear-gradient(to bottom, black 80%, transparent);
+}
+
+.reflection-effect::before {
+  content: "";
+  @apply absolute top-0 left-0 w-full h-full bg-linear-to-tr from-white/10 via-white/5 to-transparent pointer-events-none;
+}
